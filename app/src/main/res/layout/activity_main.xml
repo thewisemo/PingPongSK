@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_green_gradient"
+    android:gravity="center_horizontal"
+    tools:context="com.example.android.pingpongsk.MainActivity">
+    <!--include the tool bar view-->
+    <include
+        android:id="@+id/too_bar_view"
+        layout="@layout/tool_bar_widget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--Start Left & Right Linear's-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+        <!--Start Left Linear-->
+        <LinearLayout
+            android:id="@+id/left_linear_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!--Left name TV-->
+            <TextView
+                android:id="@+id/left_name_tv"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/round_bkg_dark"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="@string/left_team"
+                android:textAllCaps="true"
+                android:textColor="#ffffff"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+            <!--Left score TV-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="135dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="50dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/_0"
+                android:textColor="#fff"
+                android:textSize="120sp"
+                android:textStyle="bold" />
+            <!-- Start Left Score Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_bkg_dark"
+                android:orientation="vertical">
+                <!--Left Increment BTN-->
+                <ImageButton
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/inc_layer_list"
+                    android:contentDescription="@string/increment" />
+                <!--Left Decrement BTN-->
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/dec_layer_list"
+                    android:contentDescription="@string/decrement" />
+                <!-- End Left Score Buttons -->
+            </LinearLayout>
+            <!--End Left Linear-->
+        </LinearLayout>
+        <!--Start Left Linear-->
+        <LinearLayout
+            android:id="@+id/right_linear_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!--Left name TV-->
+            <TextView
+                android:id="@+id/right_name_tv"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/round_bkg_dark"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="@string/right_name"
+                android:textAllCaps="true"
+                android:textColor="#ffffff"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+            <!--Left score TV-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="135dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="50dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/_0"
+                android:textColor="#fff"
+                android:textSize="120sp"
+                android:textStyle="bold" />
+            <!-- Start Left Score Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_bkg_dark"
+                android:orientation="vertical">
+                <!--Left Increment BTN-->
+                <ImageButton
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/inc_layer_list"
+                    android:contentDescription="@string/increment" />
+                <!--Left Decrement BTN-->
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/dec_layer_list"
+                    android:contentDescription="@string/decrement" />
+                <!-- End Right Score Buttons -->
+            </LinearLayout>
+            <!--End Rigt Linear-->
+        </LinearLayout>
+        <!--End Left & Right Linears-->
+    </LinearLayout>
+    <!-- Center Lines / Table Net -->
+    <View
+        android:layout_width="2dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/too_bar_view"
+        android:background="#FFF" />
+    <!-- Reset Button -->
+    <ImageButton
+        android:id="@+id/reset_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/reset_layer_list"
+        android:contentDescription="@string/reset" />
+    <!-- Standing Button -->
+    <ImageButton
+        android:id="@+id/standings_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/reset_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/standings_list"
+        android:contentDescription="@string/standings"
+        android:textStyle="bold" />
+    <!-- Swap Button -->
+    <ImageButton
+        android:id="@+id/swap_btn"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/reset_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/swap_layer_list"
+        android:contentDescription="@string/swap_btn" />
+</RelativeLayout>

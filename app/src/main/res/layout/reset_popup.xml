@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/round_white_bkg"
+        android:orientation="vertical">
+        <!-- Reset popup title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/White"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingEnd="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingStart="30dp"
+            android:text="@string/reset"
+            android:textColor="@color/Red"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+        <!-- Just Choose title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/just_choose_both_sides_score"
+            android:textAllCaps="true"
+            android:textColor="@color/DarkBlue" />
+        <!-- Reset to 15 button -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_red_bkg"
+            android:padding="16dp"
+            android:text="@string/fifteen_all"
+            android:textColor="@color/White"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <!-- Reset to 17 button -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_red_bkg"
+            android:padding="16dp"
+            android:text="@string/seventeen_all"
+            android:textColor="@color/White"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <!-- Reset to 0 button -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/round_red_bkg"
+            android:padding="16dp"
+            android:text="@string/zero_all"
+            android:textColor="@color/White"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <!-- Back button -->
+        <Button
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/round_bkg_dark"
+            android:gravity="center"
+            android:text="@string/back"
+            android:textColor="@color/White"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_green_gradient"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context="com.example.android.pingpongsk.UserNamesInput">
+
+    <LinearLayout
+        android:id="@+id/welcome_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+        <!--App logo with text as drawable top-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/ppsk_logo"
+            android:gravity="center"
+            android:text="@string/wisemo"
+            android:textColor="@color/White" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/user_start_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <!--Enter Names TV-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/enter_names_then_start"
+            android:textAllCaps="true"
+            android:textColor="@color/White"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <!--Start Right & Left EditTxt views-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+            <!--Left name EditTxt view-->
+            <EditText
+                android:id="@+id/left_name"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_horizontal"
+                android:hint="@string/left_team"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/White"
+                android:textColorHint="@color/Gray" />
+            <!--Right name EditTxt view-->
+            <EditText
+                android:id="@+id/right_name"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_horizontal"
+                android:hint="@string/right_team"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/White"
+                android:textColorHint="@color/Gray" />
+            <!--End Right & Left EditTxt views-->
+        </LinearLayout>
+        <!--Start button view-->
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_red_bkg"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:singleLine="true"
+            android:text="@string/start"
+            android:textColor="@color/White"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

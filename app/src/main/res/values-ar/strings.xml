@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ping Pong SK</string>
+    <string name="back">عوده</string>
+    <string name="share_scores">شارك النتيجه</string>
+    <string name="third">الثالث</string>
+    <string name="second">الثاني</string>
+    <string name="first">الأول</string>
+    <string name="set_scores">نتائج المجموعات</string>
+    <string name="standings">النتائج</string>
+    <string name="sets_won">إجمالي المجموعات فازها كل لاعب</string>
+    <string name="just_choose_both_sides_score">إختر نتيجه واحده للاعبين</string>
+    <string name="new_game">لعبه جديده</string>
+    <string name="about">عن التطبيق</string>
+    <string name="close_the_app">غلق التطبيق</string>
+    <string name="are_you_sure">هل تريد الخروج من التطبيق ؟</string>
+    <string name="bye_bye">وداعــــــــاً</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا !</string>
+    <string name="enter_names_then_start">قم بإدخال أسماء اللاعبين</string>
+    <string name="start">إبداً</string>
+    <string name="reset">توحيد النتيجه</string>
+    <string name="left_team">جهة اليسار</string>
+    <string name="right_team" translatable="false">جهة اليمين</string>
+    <string name="connect_me_on_linkedin">تواصل معي</string>
+    <string name="this_app_was">هذا التطبيق لإحدى الطلبه الفائزين بمنحة جوجل | يوداسيتي\\n2017&#8211;2018</string>
+</resources>

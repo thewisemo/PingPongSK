@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?><!-- start 2nd set scores row -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="10dp"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+    <!-- Start left set scores -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:orientation="horizontal">
+        <!-- Start 2nd set 1st match score CheckBox -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!-- Left set 2 1st match -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first"
+                android:textColor="@color/Red"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <!-- End 1st set 1st match score CheckBox -->
+        </LinearLayout>
+        <!-- Start 2nd set 2nd match score CheckBox -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!-- Left set 2 2nd match -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/second"
+                android:textColor="@color/Red"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <!-- End 2nd set 2nd match score CheckBox -->
+        </LinearLayout>
+        <!-- Start 2nd set 3rd match score CheckBox -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!-- Left set 2 3rd match -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/third"
+                android:textColor="@color/Red"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <!-- End 2nd set 3rd match score CheckBox -->
+        </LinearLayout>
+        <!-- End left set CheckBoxes -->
+    </LinearLayout>
+    <!-- 2nd set label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/round_white_bkg"
+        android:gravity="center"
+        android:text="@string/second"
+        android:textColor="@color/DarkBlue"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <!-- Start right set CheckBoxes -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:orientation="horizontal">
+        <!-- Start 2nd set 1st match score CheckBox -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!-- right set 2 1st match -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first"
+                android:textColor="@color/Red"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <!-- End 2nd set 1st match score CheckBox -->
+        </LinearLayout>
+        <!-- Start 2nd set 2nd match score CheckBox -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!-- right set 2 2nd match -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/second"
+                android:textColor="@color/Red"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <!-- End 2nd set 2nd match score CheckBox -->
+        </LinearLayout>
+        <!-- Start 2nd set 3rd match score CheckBox -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!-- right set 2 3rd match -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/third"
+                android:textColor="@color/Red"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <!-- End 2nd set 3rd match score CheckBox -->
+        </LinearLayout>
+        <!-- End right set scores -->
+    </LinearLayout>
+    <!-- End 2nd set scores row -->
+</LinearLayout>

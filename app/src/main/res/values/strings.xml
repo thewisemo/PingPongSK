@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Ping Pong SK</string>
+    <string name="back">Back</string>
+    <string name="share_scores">SHARE SCORES</string>
+    <string name="_0" translatable="false">0</string>
+    <string name="third">Third</string>
+    <string name="second">Second</string>
+    <string name="first">First</string>
+    <string name="set_scores">SET SCORES</string>
+    <string name="standings">Standings</string>
+    <string name="left_team">Left Name</string>
+    <string name="right_team">Right Name</string>
+    <string name="sets_won">sets won</string>
+    <string name="increment" translatable="false">+</string>
+    <string name="decrement" translatable="false">-</string>
+    <string name="right_name" translatable="false">Right Name</string>
+    <string name="reset">Reset Scores</string>
+    <string name="swap_btn" translatable="false">swap btn</string>
+    <string name="start">Start</string>
+    <string name="enter_names_then_start">Enter names then start</string>
+    <string name="wisemo" translatable="false">WISEMO\n#MadeWithUdacity 2017</string>
+    <string name="zero_all" translatable="false">0    |    0</string>
+    <string name="seventeen_all" translatable="false">17    |    17</string>
+    <string name="fifteen_all" translatable="false">15    |    15</string>
+    <string name="just_choose_both_sides_score">Just Choose Both Sides Score</string>
+    <string name="new_game">New Game</string>
+    <string name="about">About</string>
+    <string name="close_the_app">Close the App</string>
+    <string name="are_you_sure">Are You Sure Want To Close The App ?</string>
+    <string name="bye_bye">Bye Bye</string>
+    <string name="yes">YES</string>
+    <string name="no">NO!</string>
+    <string name="this_app_was">This App was created by\nWISEMO\nOne of the Google | Udacity Developer schoolarship winners\n2017&#8211;2018</string>
+    <string name="connect_me_on_linkedin">Connect me on Linkedin</string>
+    <string name="mo_logo" translatable="false">mo_logo</string>
+    <string name="google_udacity_logos" translatable="false">google_udacity_logos</string>
+
+</resources>
