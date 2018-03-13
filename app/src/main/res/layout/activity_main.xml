@@ -69,6 +69,7 @@
                 android:orientation="vertical">
                 <!--Left Increment BTN-->
                 <ImageButton
+                    android:id="@+id/inc_left_one"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
@@ -78,6 +79,7 @@
                     android:contentDescription="@string/increment" />
                 <!--Left Decrement BTN-->
                 <ImageButton
+                    android:id="@+id/dec_left_one"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
@@ -139,6 +141,7 @@
                 android:orientation="vertical">
                 <!--Left Increment BTN-->
                 <ImageButton
+                    android:id="@+id/inc_right_one"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
@@ -148,6 +151,7 @@
                     android:contentDescription="@string/increment" />
                 <!--Left Decrement BTN-->
                 <ImageButton
+                    android:id="@+id/dec_right_one"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
@@ -165,8 +169,8 @@
     <View
         android:layout_width="2dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_below="@id/too_bar_view"
+        android:layout_centerInParent="true"
         android:background="#FFF" />
     <!-- Reset Button -->
     <ImageButton

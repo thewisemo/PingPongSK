@@ -7,12 +7,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -31,9 +33,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     // Declaring some objects like TextViews, LinearLayout, Animation, ImageButton, Boolean.,.. etc.
     TextView leftName, rightName;
-    LinearLayout leftL, rightL;
-    Animation leftToRight, rightToLeft, leftRToLeft, rightLToRight;
-    ImageButton swap, reset, standings;
+    LinearLayout leftSideLinearViewObj, rightSideLinearViewObj;
+    Animation leftToRightAnimationObj, rightToLeftAnimationObj, leftRToLeftAnimationObj, rightLToRightAnimationObj;
+    ImageButton swap, reset, standings, incLeft, decLeft, incRight, decRight;
     Boolean leftIsLeft = true;
     // For the reset & standings popup windows declaring the popup window objects,
     // Context variable,
@@ -44,10 +46,26 @@ public class MainActivity extends AppCompatActivity {
     Activity mActivity;
     RelativeLayout mainParent;
 
+    public static Point getLocationOnScreen(View view) {
+        int[] location = new int[2];
+        view.getLocationOnScreen(location);
+        return new Point(location[0], location[1]);
+    }
+
+    public static Point getLvLocationOnScreen(LinearLayout view) {
+        int[] location = new int[2];
+        view.getLocationOnScreen(location);
+        return new Point(location[0], location[1]);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        incLeft = findViewById(R.id.inc_left_one);
+        incRight = findViewById(R.id.inc_right_one);
+        decLeft = findViewById(R.id.dec_left_one);
+        decRight = findViewById(R.id.dec_right_one);
         // Create an object to the tool bar and assign it to the id in the activity_main.xml THEN
         // set the suport to it as an action bar.
         Toolbar toolbar = findViewById(R.id.too_bar_view);
@@ -88,24 +106,58 @@ public class MainActivity extends AppCompatActivity {
            Start the left to left anim FOR the left LinearLayout
            Start the right to right anim FOR the right LinearLayout
          */
-        leftL = findViewById(R.id.left_linear_view);
-        rightL = findViewById(R.id.right_linear_view);
-        leftToRight = AnimationUtils.loadAnimation(this, R.anim.left_ltor);
-        leftRToLeft = AnimationUtils.loadAnimation(this, R.anim.left_rtol);
-        rightToLeft = AnimationUtils.loadAnimation(this, R.anim.right_rtol);
-        rightLToRight = AnimationUtils.loadAnimation(this, R.anim.right_ltor);
+        leftSideLinearViewObj = findViewById(R.id.left_linear_view);
+        rightSideLinearViewObj = findViewById(R.id.right_linear_view);
+        leftToRightAnimationObj = AnimationUtils.loadAnimation(this, R.anim.left_ltor);
+        leftRToLeftAnimationObj = AnimationUtils.loadAnimation(this, R.anim.left_rtol);
+        rightToLeftAnimationObj = AnimationUtils.loadAnimation(this, R.anim.right_rtol);
+        rightLToRightAnimationObj = AnimationUtils.loadAnimation(this, R.anim.right_ltor);
         swap = findViewById(R.id.swap_btn);
         swap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (leftIsLeft) {
                     leftIsLeft = false;
-                    leftL.startAnimation(leftToRight);
-                    rightL.startAnimation(rightToLeft);
+                    leftSideLinearViewObj.startAnimation(leftToRightAnimationObj);
+                    leftSideLinearViewObj.offsetLeftAndRight(50);
+//                    leftSideLinearViewObj.layout(0,0,50,0);
+//                    incLeft.startAnimation(leftToRightAnimationObj);
+//                    decLeft.startAnimation(leftToRightAnimationObj);
+                    rightSideLinearViewObj.startAnimation(rightToLeftAnimationObj);
+                    rightSideLinearViewObj.offsetLeftAndRight(-50);
+//                    rightSideLinearViewObj.layout(50,0,0,0);
+//                    incRight.startAnimation(rightToLeftAnimationObj);
+//                    decLeft.startAnimation(rightToLeftAnimationObj);
+                    Point incbtnpoint, decbtnpoint, leftLinear, rightLinear;
+                    incbtnpoint = getLocationOnScreen(incLeft);
+                    decbtnpoint = getLocationOnScreen(decLeft);
+                    leftLinear = getLvLocationOnScreen(leftSideLinearViewObj);
+                    rightLinear = getLvLocationOnScreen(rightSideLinearViewObj);
+                    Log.d("INC INTS FROM L TO R", "Point value: " + incbtnpoint);
+                    Log.d("DEC INTS FROM L TO R", "Point value: " + decbtnpoint);
+                    Log.d("LEFT LINEAR VIEW", "Point value: " + leftLinear);
+                    Log.d("RIGHT LINEAR VIEW", "Point value: " + rightLinear);
                 } else {
                     leftIsLeft = true;
-                    leftL.startAnimation(leftRToLeft);
-                    rightL.startAnimation(rightLToRight);
+                    leftSideLinearViewObj.startAnimation(leftRToLeftAnimationObj);
+                    leftSideLinearViewObj.offsetLeftAndRight(-50);
+//                    leftSideLinearViewObj.layout(50,0,0,0);
+//                    incLeft.startAnimation(leftRToLeftAnimationObj);
+//                    decLeft.startAnimation(leftRToLeftAnimationObj);
+                    rightSideLinearViewObj.startAnimation(rightLToRightAnimationObj);
+                    rightSideLinearViewObj.offsetLeftAndRight(50);
+//                    rightSideLinearViewObj.layout(0,0,50,0);
+//                    incRight.startAnimation(rightLToRightAnimationObj);
+//                    decRight.startAnimation(rightLToRightAnimationObj);
+                    Point incbtnpoint, decbtnpoint, leftLinear, rightLinear;
+                    incbtnpoint = getLocationOnScreen(incLeft);
+                    decbtnpoint = getLocationOnScreen(decLeft);
+                    leftLinear = getLvLocationOnScreen(leftSideLinearViewObj);
+                    rightLinear = getLvLocationOnScreen(rightSideLinearViewObj);
+                    Log.d("INC INTS FROM R TO L", "Point value: " + incbtnpoint);
+                    Log.d("DEC INTS FROM R TO L", "Point value: " + decbtnpoint);
+                    Log.d("LEFT LINEAR VIEW", "Point value: " + leftLinear);
+                    Log.d("RIGHT LINEAR VIEW", "Point value: " + rightLinear);
                 }
             }
         });
@@ -176,10 +228,12 @@ public class MainActivity extends AppCompatActivity {
         standings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,Standings.class);
+                Intent i = new Intent(MainActivity.this, Standings.class);
                 startActivity(i);
             }
         });
+
+
     }
 
     // @Override the onCreateOptionsMenu method to inflate the tool_bar_menu.xml resource for the toolbar menu THEN
@@ -189,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.tool_bar_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
     // Overriding the onOptionsItemSelected for the tool bar menu,
     // create a switch cases to the onOptionsItemSelected boolean value,
     // Case for the NEW GAME Button
@@ -229,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
                 // Showing Alert Dialog.
                 closeAppDialog.show();
                 break;
-                // Case of the About button.
+            // Case of the About button.
             case R.id.action_about:
                 // Create a factory object as a LayoutInflater from the MainActivity.class
                 LayoutInflater factory = LayoutInflater.from(this);
@@ -266,6 +321,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
     // Overriding the onBackPressed method to show a "Close App" AlertDialog with Yes & No buttons.
     @Override
     public void onBackPressed() {
