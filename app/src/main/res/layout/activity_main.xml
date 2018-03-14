@@ -9,12 +9,13 @@
     tools:context="com.example.android.pingpongsk.MainActivity">
     <!--include the tool bar view-->
     <include
-        android:id="@+id/too_bar_view"
+        android:id="@+id/tool_bar_view"
         layout="@layout/tool_bar_widget"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <!--Start Left & Right Linear's-->
     <LinearLayout
+        android:id="@+id/sides_linear_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:baselineAligned="false"
@@ -51,6 +52,7 @@
                 android:textStyle="bold" />
             <!--Left score TV-->
             <TextView
+                android:id="@+id/left_score_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="135dp"
                 android:layout_gravity="center"
@@ -123,6 +125,7 @@
                 android:textStyle="bold" />
             <!--Left score TV-->
             <TextView
+                android:id="@+id/right_score_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="135dp"
                 android:layout_gravity="center"
@@ -169,7 +172,7 @@
     <View
         android:layout_width="2dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/too_bar_view"
+        android:layout_below="@id/tool_bar_view"
         android:layout_centerInParent="true"
         android:background="#FFF" />
     <!-- Reset Button -->

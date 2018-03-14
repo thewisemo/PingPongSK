@@ -1,13 +1,15 @@
 package com.example.android.pingpongsk;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -38,6 +40,12 @@ public class UserNamesInput extends AppCompatActivity {
         // Assign the user Edit text views to their id in the activity_user_names_input.xml file.
         leftName = findViewById(R.id.left_name);
         rightName = findViewById(R.id.right_name);
+        leftName.requestFocus();
+        rightName.requestFocus();
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        assert imm != null;
+        imm.showSoftInput(leftName, InputMethodManager.SHOW_IMPLICIT);
+
         // Assign the Start button to its id in the activity_user_names_input.xml file.
         start = findViewById(R.id.startBtn);
         // Set OnClickListener to the start button
@@ -48,7 +56,7 @@ public class UserNamesInput extends AppCompatActivity {
                 if ((leftName.getText().toString().trim().equals(""))
                         || rightName.getText().toString().trim().equals("")) {
                     // Show warning Toast
-                    Toast.makeText(getApplicationContext(), "One OR Both Names Are Empty!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.one_or_more, Toast.LENGTH_SHORT).show();
                 } else {
                     // Initialize an intent to pass user sides names to MainActivity.
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -69,7 +77,7 @@ public class UserNamesInput extends AppCompatActivity {
         // Setting Dialog Title.
         closeAppDialog.setTitle(R.string.close_the_app);
         // Setting Dialog Message.
-        closeAppDialog.setMessage("Won't you play now ?");
+        closeAppDialog.setMessage(R.string.are_you_sure);
         // Setting Icon to Dialog.
         closeAppDialog.setIcon(R.drawable.ppsk_logo);
         // Setting Positive "Yes" Btn.
@@ -90,7 +98,7 @@ public class UserNamesInput extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 // Congratulations dialog toast.
                                 Toast.makeText(getApplicationContext(),
-                                        "So, Enter the 2 sides Names", Toast.LENGTH_LONG)
+                                        R.string.So_enter, Toast.LENGTH_LONG)
                                         .show();
                                 dialog.dismiss();
                             }

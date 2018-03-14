@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_gravity="center">
 
     <LinearLayout
         android:id="@+id/standings_parent_lv"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:background="@drawable/round_bkg_dark"
         android:orientation="vertical"
         android:padding="25dp"
@@ -34,6 +33,7 @@
             android:orientation="horizontal">
             <!-- Left Name -->
             <TextView
+                android:id="@+id/standings_left_name_tv"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -55,6 +55,7 @@
                 android:textStyle="bold" />
             <!-- Right Name -->
             <TextView
+                android:id="@+id/standings_right_name_tv"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -97,6 +98,7 @@
             android:orientation="horizontal">
             <!-- Left Name -->
             <TextView
+                android:id="@+id/standings_left_sets_won_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -118,6 +120,7 @@
                 android:textStyle="bold" />
             <!-- Right Name -->
             <TextView
+                android:id="@+id/standings_right_sets_won_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

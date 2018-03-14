@@ -7,14 +7,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -31,15 +29,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    public static int maxGameScore = 1;
-    public static int maxSetScore = 2;
-    public static int maxMatchScore = 5;
+    public static int maxMatchScore = 20;
     // Declaring some objects like TextViews, LinearLayout, Animation, ImageButton, Boolean.,.. etc.
     TextView leftName, rightName;
     LinearLayout leftSideLinearViewObj, rightSideLinearViewObj;
     Animation leftToRightAnimationObj, rightToLeftAnimationObj, leftRToLeftAnimationObj, rightLToRightAnimationObj;
     ImageButton swap, reset, standings, incLeft, decLeft, incRight, decRight;
     Boolean leftIsLeft = true;
+    int leftMatchScore, rightMatchScore;
+    TextView leftScoreTv, rightScoreTv;
     // For the reset & standings popup windows declaring the popup window objects,
     // Context variable,
     // The activity variable "which will be the bkg for the reset popup window,
@@ -48,31 +46,13 @@ public class MainActivity extends AppCompatActivity {
     Context mContext;
     Activity mActivity;
     RelativeLayout mainParent;
-
-    // These get locations methods were written to print the x,y of views "As a try to solve the swap btn issues"
-    public static Point getLocationOnScreen(View view) {
-        int[] location = new int[2];
-        view.getLocationOnScreen(location);
-        return new Point(location[0], location[1]);
-    }
-
-    public static Point getLvLocationOnScreen(LinearLayout view) {
-        int[] location = new int[2];
-        view.getLocationOnScreen(location);
-        return new Point(location[0], location[1]);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        incLeft = findViewById(R.id.inc_left_one);
-        incRight = findViewById(R.id.inc_right_one);
-        decLeft = findViewById(R.id.dec_left_one);
-        decRight = findViewById(R.id.dec_right_one);
         // Create an object to the tool bar and assign it to the id in the activity_main.xml THEN
         // set the suport to it as an action bar.
-        Toolbar toolbar = findViewById(R.id.too_bar_view);
+        Toolbar toolbar = findViewById(R.id.tool_bar_view);
         setSupportActionBar(toolbar);
         /*
         Assign the leftName & tightName TV objects to their ids in the activity_main.xml THEN:
@@ -129,39 +109,12 @@ public class MainActivity extends AppCompatActivity {
 //                    decLeft.startAnimation(leftToRightAnimationObj);
                     rightSideLinearViewObj.startAnimation(rightToLeftAnimationObj);
                     rightSideLinearViewObj.offsetLeftAndRight(-50);
-//                    rightSideLinearViewObj.layout(50,0,0,0);
-//                    incRight.startAnimation(rightToLeftAnimationObj);
-//                    decLeft.startAnimation(rightToLeftAnimationObj);
-                    Point incbtnpoint, decbtnpoint, leftLinear, rightLinear;
-                    incbtnpoint = getLocationOnScreen(incLeft);
-                    decbtnpoint = getLocationOnScreen(decLeft);
-                    leftLinear = getLvLocationOnScreen(leftSideLinearViewObj);
-                    rightLinear = getLvLocationOnScreen(rightSideLinearViewObj);
-                    Log.d("INC INTS FROM L TO R", "Point value: " + incbtnpoint);
-                    Log.d("DEC INTS FROM L TO R", "Point value: " + decbtnpoint);
-                    Log.d("LEFT LINEAR VIEW", "Point value: " + leftLinear);
-                    Log.d("RIGHT LINEAR VIEW", "Point value: " + rightLinear);
                 } else {
                     leftIsLeft = true;
                     leftSideLinearViewObj.startAnimation(leftRToLeftAnimationObj);
                     leftSideLinearViewObj.offsetLeftAndRight(-50);
-//                    leftSideLinearViewObj.layout(50,0,0,0);
-//                    incLeft.startAnimation(leftRToLeftAnimationObj);
-//                    decLeft.startAnimation(leftRToLeftAnimationObj);
                     rightSideLinearViewObj.startAnimation(rightLToRightAnimationObj);
                     rightSideLinearViewObj.offsetLeftAndRight(50);
-//                    rightSideLinearViewObj.layout(0,0,50,0);
-//                    incRight.startAnimation(rightLToRightAnimationObj);
-//                    decRight.startAnimation(rightLToRightAnimationObj);
-                    Point incbtnpoint, decbtnpoint, leftLinear, rightLinear;
-                    incbtnpoint = getLocationOnScreen(incLeft);
-                    decbtnpoint = getLocationOnScreen(decLeft);
-                    leftLinear = getLvLocationOnScreen(leftSideLinearViewObj);
-                    rightLinear = getLvLocationOnScreen(rightSideLinearViewObj);
-                    Log.d("INC INTS FROM R TO L", "Point value: " + incbtnpoint);
-                    Log.d("DEC INTS FROM R TO L", "Point value: " + decbtnpoint);
-                    Log.d("LEFT LINEAR VIEW", "Point value: " + leftLinear);
-                    Log.d("RIGHT LINEAR VIEW", "Point value: " + rightLinear);
                 }
             }
         });
@@ -201,6 +154,42 @@ public class MainActivity extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT >= 21) {
                     resetPopupWindow.setElevation(5.0f);
                 }
+                // reset both sides to 15
+                Button resetToFifteen = resetView.findViewById(R.id.fifteen_for_both);
+                resetToFifteen.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        leftMatchScore = 15;
+                        rightMatchScore = 15;
+                        displayForLeft(leftMatchScore);
+                        displayForRight(rightMatchScore);
+                        resetPopupWindow.dismiss();
+                    }
+                });
+                // reset both sides to 17
+                Button resetToSeventeen = resetView.findViewById(R.id.seventeen_for_both);
+                resetToSeventeen.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        leftMatchScore = 17;
+                        rightMatchScore = 17;
+                        displayForLeft(leftMatchScore);
+                        displayForRight(rightMatchScore);
+                        resetPopupWindow.dismiss();
+                    }
+                });
+                // reset both sides to 0
+                Button resetToZero = resetView.findViewById(R.id.zero_for_both);
+                resetToZero.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        leftMatchScore = 0;
+                        rightMatchScore = 0;
+                        displayForLeft(leftMatchScore);
+                        displayForRight(rightMatchScore);
+                        resetPopupWindow.dismiss();
+                    }
+                });
                 // Back button
                 Button back = resetView.findViewById(R.id.back);
                 back.setOnClickListener(new View.OnClickListener() {
@@ -236,10 +225,130 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
+        // Assigning the values of all buttons.
+        incLeft = findViewById(R.id.inc_left_one);
+        decLeft = findViewById(R.id.dec_left_one);
+        incRight = findViewById(R.id.inc_right_one);
+        decRight = findViewById(R.id.dec_right_one);
+        leftScoreTv = findViewById(R.id.left_score_tv);
+        rightScoreTv = findViewById(R.id.right_score_tv);
+        // Left side increment button
+        incLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (leftMatchScore >= maxMatchScore) {
+                    // Confirmation AlertDialog builder "So when user press No left score back to 20"
+                    AlertDialog.Builder isLeftWonDialog = new AlertDialog.Builder(MainActivity.this);
+                    // Setting Dialog Title.
+                    isLeftWonDialog.setTitle("");
+                    // Setting Dialog Message, "I used the Activity.this.getString() method to avoid showing numbers instead of the string resources.
+                    isLeftWonDialog.setMessage(MainActivity.this.getString(R.string.is) + "\u0020" + leftName.getText().toString() + "\u0020" + MainActivity.this.getString(R.string.won));
+                    // Setting Icon to Dialog.
+                    isLeftWonDialog.setIcon(R.drawable.ppsk_logo);
+                    // Setting Positive "Yes" Btn.
+                    isLeftWonDialog.setPositiveButton(R.string.yes,
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent newGame = new Intent(getApplicationContext(), UserNamesInput.class);
+                                    startActivity(newGame);
+                                    // TO DO will reset all scores values to Zero.
+                                    finish();
+                                    // Congratulations dialog toast.
+                                    Toast.makeText(getApplicationContext(),
+                                            R.string.New_Names_Needed_To_Start, Toast.LENGTH_LONG)
+                                            .show();
+                                }
+                            })
+                            // Setting Negative "No" Btn.
+                            .setNegativeButton(R.string.no,
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                            leftMatchScore--;
+                                            displayForLeft(leftMatchScore);
+                                        }
+                                    });
+                    // Showing Alert Dialog.
+                    isLeftWonDialog.show();
+                }
+                leftMatchScore++;
+                displayForLeft(leftMatchScore);
+            }
+        });
+        // Right side increment button
+        incRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (rightMatchScore >= maxMatchScore) {
+                    // Confirmation AlertDialog builder "So when user press No right score back to 20"
+                    AlertDialog.Builder isRightWonDialog = new AlertDialog.Builder(MainActivity.this);
+                    // Setting Dialog Title.
+                    isRightWonDialog.setTitle(R.string.congratulation);
+                    // Setting Dialog Message.
+                    isRightWonDialog.setMessage(MainActivity.this.getString(R.string.is) + "\u0020" + rightName.getText().toString() + "\u0020" + MainActivity.this.getString(R.string.won));
+                    // Setting Icon to Dialog.
+                    isRightWonDialog.setIcon(R.drawable.ppsk_logo);
+                    // Setting Positive "Yes" Btn.
+                    isRightWonDialog.setPositiveButton(R.string.yes,
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent newGame = new Intent(getApplicationContext(), UserNamesInput.class);
+                                    startActivity(newGame);
+                                    // TO DO will reset all scores values to Zero.
+                                    finish();
+                                    // Congratulations dialog toast.
+                                    Toast.makeText(getApplicationContext(),
+                                            R.string.New_Names_Needed_To_Start, Toast.LENGTH_LONG)
+                                            .show();
+                                }
+                            })
+                            // Setting Negative "No" Btn.
+                            .setNegativeButton(R.string.no,
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                            rightMatchScore--;
+                                            displayForRight(rightMatchScore);
+                                        }
+                                    });
+                    // Showing Alert Dialog.
+                    isRightWonDialog.show();
+                }
+                rightMatchScore++;
+                displayForRight(rightMatchScore);
+            }
+        });
+        // Left side decrement button
+        decLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (leftMatchScore == 0) {
+                    // Show an error message as a toast
+                    Toast.makeText(getApplicationContext(), leftName.getText().toString() + "\u0020" + MainActivity.this.getString(R.string.cannot_have_less_than_zero), Toast.LENGTH_SHORT).show();
+                    // Exit this method early because there's nothing left to do
+                    return;
+                }
+                leftMatchScore--;
+                displayForLeft(leftMatchScore);
+            }
+        });
+        // Right side decrement button
+        decRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (rightMatchScore == 0) {
+                    // Show an error message as a toast
+                    Toast.makeText(getApplicationContext(), rightName.getText().toString() + "\u0020" + MainActivity.this.getString(R.string.cannot_have_less_than_zero), Toast.LENGTH_SHORT).show();
+                    // Exit this method early because there's nothing left to do
+                    return;
+                }
+                rightMatchScore--;
+                displayForRight(rightMatchScore);
+            }
+        });
     }
-
     // @Override the onCreateOptionsMenu method to inflate the tool_bar_menu.xml resource for the toolbar menu THEN
     // Return super true.
     @Override
@@ -247,7 +356,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.tool_bar_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     // Overriding the onOptionsItemSelected for the tool bar menu,
     // create a switch cases to the onOptionsItemSelected boolean value,
     // Case for the NEW GAME Button
@@ -258,9 +366,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_new_game:
                 AlertDialog.Builder closeAppDialog = new AlertDialog.Builder(MainActivity.this);
                 // Setting Dialog Title.
-                closeAppDialog.setTitle("Start a new game ?");
+                closeAppDialog.setTitle(R.string.Start_a_new_game);
                 // Setting Dialog Message.
-                closeAppDialog.setMessage("By choosing YES! you will loose all current scores and will choose enter new players");
+                closeAppDialog.setMessage(R.string.By_choosing_YES);
                 // Setting Icon to Dialog.
                 closeAppDialog.setIcon(R.drawable.ppsk_logo);
                 // Setting Positive "Yes" Btn.
@@ -273,7 +381,7 @@ public class MainActivity extends AppCompatActivity {
                                 finish();
                                 // Congratulations dialog toast.
                                 Toast.makeText(getApplicationContext(),
-                                        "New Names Needed To Start", Toast.LENGTH_LONG)
+                                        R.string.New_Names_Needed_To_Start, Toast.LENGTH_LONG)
                                         .show();
                             }
                         })
@@ -325,7 +433,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
     // Overriding the onBackPressed method to show a "Close App" AlertDialog with Yes & No buttons.
     @Override
     public void onBackPressed() {
@@ -357,5 +464,17 @@ public class MainActivity extends AppCompatActivity {
                         });
         // Showing Alert Dialog.
         closeAppDialog.show();
+    }
+
+    // This method to display the left match score and take the current left score int @params.
+    public void displayForLeft(int currentLeftScore) {
+        TextView scoreView = findViewById(R.id.left_score_tv);
+        scoreView.setText(String.valueOf(currentLeftScore));
+    }
+
+    // This method to display the right match score and take the current right score int @params.
+    public void displayForRight(int currentRightScore) {
+        TextView scoreView = findViewById(R.id.right_score_tv);
+        scoreView.setText(String.valueOf(currentRightScore));
     }
 }

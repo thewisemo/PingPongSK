@@ -21,7 +21,16 @@
     <string name="start">إبداً</string>
     <string name="reset">توحيد النتيجه</string>
     <string name="left_team">جهة اليسار</string>
-    <string name="right_team" translatable="false">جهة اليمين</string>
     <string name="connect_me_on_linkedin">تواصل معي</string>
-    <string name="this_app_was">هذا التطبيق لإحدى الطلبه الفائزين بمنحة جوجل | يوداسيتي\\n2017&#8211;2018</string>
+    <string name="this_app_was">هذا التطبيق لإحدى الطلبه الفائزين بمنحة جوجل | يوداسيتي 2017&#8211;2018</string>
+    <string name="congratulation">تهانينا!</string>
+    <string name="is">هل ربح</string>
+    <string name="won">المباراة ؟</string>
+    <string name="New_Names_Needed_To_Start">يرجى إدخال أسماء لاعبي المباراة</string>
+    <string name="cannot_have_less_than_zero">لا يمكن أن يكون لديه أقل من صفر كنقطه</string>
+    <string name="Start_a_new_game">هل تريد بداية مباراة جديده</string>
+    <string name="By_choosing_YES">باختيارك لـ نعم فسوف تفقد النقاط الحاليه وسيُطلَب منك إدخال إسمين جديدين</string>
+    <string name="right_team">جهة اليمين</string>
+    <string name="So_enter">إذن! فضلاً أدخل أسماء اللاعبين</string>
+    <string name="one_or_more">فضلاً أدخل أسماء اللاعبين قبل الضغط على إبدأ</string>
 </resources>
