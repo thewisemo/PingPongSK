@@ -61,7 +61,7 @@
                 android:textColor="#fff"
                 android:textSize="120sp"
                 android:textStyle="bold" />
-            <!-- Start Left Score Buttons -->
+            <!-- Start LleftScorecore Buttons -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
                     android:layout_marginTop="16dp"
                     android:background="@drawable/dec_layer_list"
                     android:contentDescription="@string/decrement" />
-                <!-- End Left Score Buttons -->
+                <!-- End LleftScorecore Buttons -->
             </LinearLayout>
             <!--End Left Linear-->
         </LinearLayout>
@@ -133,7 +133,7 @@
                 android:textColor="#fff"
                 android:textSize="120sp"
                 android:textStyle="bold" />
-            <!-- Start Left Score Buttons -->
+            <!-- Start LleftScorecore Buttons -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -159,7 +159,7 @@
                     android:layout_marginTop="16dp"
                     android:background="@drawable/dec_layer_list"
                     android:contentDescription="@string/decrement" />
-                <!-- End Right Score Buttons -->
+                <!-- End RileftScorecore Buttons -->
             </LinearLayout>
             <!--End Rigt Linear-->
         </LinearLayout>

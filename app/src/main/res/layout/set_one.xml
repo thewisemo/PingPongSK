@@ -91,7 +91,7 @@
         </LinearLayout>
         <!-- End left set CheckBoxes -->
     </LinearLayout>
-    <!-- 1st Match label -->
+    <!-- leftMatchScoreatch label -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -31,6 +31,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    public static int maxGameScore = 1;
+    public static int maxSetScore = 2;
+    public static int maxMatchScore = 5;
     // Declaring some objects like TextViews, LinearLayout, Animation, ImageButton, Boolean.,.. etc.
     TextView leftName, rightName;
     LinearLayout leftSideLinearViewObj, rightSideLinearViewObj;
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     Activity mActivity;
     RelativeLayout mainParent;
 
+    // These get locations methods were written to print the x,y of views "As a try to solve the swap btn issues"
     public static Point getLocationOnScreen(View view) {
         int[] location = new int[2];
         view.getLocationOnScreen(location);
