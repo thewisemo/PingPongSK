@@ -29,20 +29,34 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    // Declaring the pre wining point and assign the value to 20.
     public static int maxMatchScore = 20;
+    public TextView leftScoreTv;
+    public TextView rightScoreTv;
     // Declaring some objects like TextViews, LinearLayout, Animation, ImageButton, Boolean.,.. etc.
-    TextView leftName, rightName;
-    LinearLayout leftSideLinearViewObj, rightSideLinearViewObj;
-    Animation leftToRightAnimationObj, rightToLeftAnimationObj, leftRToLeftAnimationObj, rightLToRightAnimationObj;
-    ImageButton swap, reset, standings, incLeft, decLeft, incRight, decRight;
+    TextView leftName;
+    TextView rightName;
+    LinearLayout leftSideLinearViewObj;
+    LinearLayout rightSideLinearViewObj;
+    Animation leftToRightAnimationObj;
+    Animation rightToLeftAnimationObj;
+    Animation leftRToLeftAnimationObj;
+    Animation rightLToRightAnimationObj;
+    ImageButton swap;
+    ImageButton reset;
+    ImageButton standings;
+    ImageButton incLeft;
+    ImageButton decLeft;
+    ImageButton incRight;
+    ImageButton decRight;
     Boolean leftIsLeft = true;
-    int leftMatchScore, rightMatchScore;
-    TextView leftScoreTv, rightScoreTv;
+    int leftMatchScore;
+    int rightMatchScore;
     // For the reset & standings popup windows declaring the popup window objects,
     // Context variable,
     // The activity variable "which will be the bkg for the reset popup window,
     // The main parent RelativeLayout view group.
-    PopupWindow resetPopupWindow, standingsPopupWindow;
+    PopupWindow resetPopupWindow;
     Context mContext;
     Activity mActivity;
     RelativeLayout mainParent;
@@ -103,18 +117,11 @@ public class MainActivity extends AppCompatActivity {
                 if (leftIsLeft) {
                     leftIsLeft = false;
                     leftSideLinearViewObj.startAnimation(leftToRightAnimationObj);
-                    leftSideLinearViewObj.offsetLeftAndRight(50);
-//                    leftSideLinearViewObj.layout(0,0,50,0);
-//                    incLeft.startAnimation(leftToRightAnimationObj);
-//                    decLeft.startAnimation(leftToRightAnimationObj);
                     rightSideLinearViewObj.startAnimation(rightToLeftAnimationObj);
-                    rightSideLinearViewObj.offsetLeftAndRight(-50);
                 } else {
                     leftIsLeft = true;
                     leftSideLinearViewObj.startAnimation(leftRToLeftAnimationObj);
-                    leftSideLinearViewObj.offsetLeftAndRight(-50);
                     rightSideLinearViewObj.startAnimation(rightLToRightAnimationObj);
-                    rightSideLinearViewObj.offsetLeftAndRight(50);
                 }
             }
         });
@@ -272,6 +279,7 @@ public class MainActivity extends AppCompatActivity {
                     // Showing Alert Dialog.
                     isLeftWonDialog.show();
                 }
+
                 leftMatchScore++;
                 displayForLeft(leftMatchScore);
             }

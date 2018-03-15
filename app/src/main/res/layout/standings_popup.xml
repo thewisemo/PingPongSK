@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center">
+    tools:context="com.example.android.pingpongsk.Standings">
 
     <LinearLayout
         android:id="@+id/standings_parent_lv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@drawable/round_bkg_dark"
         android:orientation="vertical"
         android:padding="25dp"
@@ -155,6 +157,7 @@
             android:textStyle="bold" />
         <!-- Start the three sets views include -->
         <include
+            android:id="@+id/set_one_view"
             layout="@layout/set_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -167,6 +170,7 @@
             android:background="@color/White" />
 
         <include
+            android:id="@+id/set_two_view"
             layout="@layout/set_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -179,6 +183,7 @@
             android:background="@color/White" />
 
         <include
+            android:id="@+id/set_three_view"
             layout="@layout/set_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
