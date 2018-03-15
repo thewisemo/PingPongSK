@@ -18,6 +18,7 @@
         android:id="@+id/sides_linear_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/tool_bar_view"
         android:baselineAligned="false"
         android:orientation="horizontal">
         <!--Start Left Linear-->
@@ -48,20 +49,19 @@
                 android:text="@string/left_team"
                 android:textAllCaps="true"
                 android:textColor="#ffffff"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
             <!--Left score TV-->
             <TextView
                 android:id="@+id/left_score_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="135dp"
+                android:layout_height="130dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="50dp"
                 android:fontFamily="serif"
                 android:gravity="center"
                 android:text="@string/_0"
                 android:textColor="#fff"
-                android:textSize="120sp"
+                android:textSize="100sp"
                 android:textStyle="bold" />
             <!-- Start LleftScorecore Buttons -->
             <LinearLayout
@@ -90,6 +90,36 @@
                     android:background="@drawable/dec_layer_list"
                     android:contentDescription="@string/decrement" />
                 <!-- End LleftScorecore Buttons -->
+            </LinearLayout>
+            <!--Start Left Wrong Button-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_bkg_dark"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="5dp">
+                <!-- Wrong Score tv-->
+                <TextView
+                    android:id="@+id/left_wrong_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_red"
+                    android:gravity="center"
+                    android:text="@string/_0"
+                    android:textColor="@color/White"
+                    android:textSize="30sp" />
+                <!-- Wrong Score btn-->
+                <Button
+                    android:id="@+id/left_wrong_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_bkg_dark"
+                    android:text="@string/wrong"
+                    android:textColor="@color/White"
+                    android:textSize="16sp" />
+                <!--End Left Wrong Button-->
             </LinearLayout>
             <!--End Left Linear-->
         </LinearLayout>
@@ -121,20 +151,20 @@
                 android:text="@string/right_name"
                 android:textAllCaps="true"
                 android:textColor="#ffffff"
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
             <!--Left score TV-->
             <TextView
                 android:id="@+id/right_score_tv"
                 android:layout_width="wrap_content"
-                android:layout_height="135dp"
+                android:layout_height="130dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="50dp"
+
                 android:fontFamily="serif"
                 android:gravity="center"
                 android:text="@string/_0"
                 android:textColor="#fff"
-                android:textSize="120sp"
+                android:textSize="100sp"
                 android:textStyle="bold" />
             <!-- Start LleftScorecore Buttons -->
             <LinearLayout
@@ -162,7 +192,37 @@
                     android:layout_marginTop="16dp"
                     android:background="@drawable/dec_layer_list"
                     android:contentDescription="@string/decrement" />
-                <!-- End RileftScorecore Buttons -->
+                <!-- End Right Score Buttons -->
+            </LinearLayout>
+            <!--Start Right Wrong Button-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_bkg_dark"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="5dp">
+                <!-- Wrong Score btn-->
+                <Button
+                    android:id="@+id/right_wrong_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_bkg_dark"
+                    android:text="@string/wrong"
+                    android:textColor="@color/White"
+                    android:textSize="16sp" />
+                <!-- Wrong Score tv-->
+                <TextView
+                    android:id="@+id/right_wrong_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_red"
+                    android:gravity="center"
+                    android:text="@string/_0"
+                    android:textColor="@color/White"
+                    android:textSize="30sp" />
+                <!--End Right Wrong Button-->
             </LinearLayout>
             <!--End Rigt Linear-->
         </LinearLayout>
@@ -184,17 +244,6 @@
         android:layout_centerInParent="true"
         android:background="@drawable/reset_layer_list"
         android:contentDescription="@string/reset" />
-    <!-- Standing Button -->
-    <ImageButton
-        android:id="@+id/standings_btn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/reset_btn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/standings_list"
-        android:contentDescription="@string/standings"
-        android:textStyle="bold" />
     <!-- Swap Button -->
     <ImageButton
         android:id="@+id/swap_btn"

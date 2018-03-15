@@ -33,4 +33,5 @@
     <string name="right_team">جهة اليمين</string>
     <string name="So_enter">إذن! فضلاً أدخل أسماء اللاعبين</string>
     <string name="one_or_more">فضلاً أدخل أسماء اللاعبين قبل الضغط على إبدأ</string>
+    <string name="wrong">خطأ</string>
 </resources>

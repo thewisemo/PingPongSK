@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     // Declaring some objects like TextViews, LinearLayout, Animation, ImageButton, Boolean.,.. etc.
     TextView leftName;
     TextView rightName;
+    TextView leftWrongTv;
+    TextView rightWrongTv;
     LinearLayout leftSideLinearViewObj;
     LinearLayout rightSideLinearViewObj;
     Animation leftToRightAnimationObj;
@@ -44,14 +46,17 @@ public class MainActivity extends AppCompatActivity {
     Animation rightLToRightAnimationObj;
     ImageButton swap;
     ImageButton reset;
-    ImageButton standings;
     ImageButton incLeft;
     ImageButton decLeft;
     ImageButton incRight;
     ImageButton decRight;
+    Button leftWrong;
+    Button rightWrong;
     Boolean leftIsLeft = true;
     int leftMatchScore;
     int rightMatchScore;
+    int leftWrongScore;
+    int rightWrongScore;
     // For the reset & standings popup windows declaring the popup window objects,
     // Context variable,
     // The activity variable "which will be the bkg for the reset popup window,
@@ -60,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     Context mContext;
     Activity mActivity;
     RelativeLayout mainParent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -222,16 +228,6 @@ public class MainActivity extends AppCompatActivity {
                 resetPopupWindow.showAtLocation(mainParent, Gravity.CENTER, 0, 0);
             }
         });
-        // Standings ImageButton object code to
-        // setOnClickListener with a new View by an intent to the standings.class
-        standings = findViewById(R.id.standings_btn);
-        standings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Standings.class);
-                startActivity(i);
-            }
-        });
         // Assigning the values of all buttons.
         incLeft = findViewById(R.id.inc_left_one);
         decLeft = findViewById(R.id.dec_left_one);
@@ -239,6 +235,30 @@ public class MainActivity extends AppCompatActivity {
         decRight = findViewById(R.id.dec_right_one);
         leftScoreTv = findViewById(R.id.left_score_tv);
         rightScoreTv = findViewById(R.id.right_score_tv);
+        // Assigning the wrong tvs.
+        leftWrongTv = findViewById(R.id.left_wrong_tv);
+        rightWrongTv = findViewById(R.id.right_wrong_tv);
+        // Assigning the wrong btns THEN thier on click listeners.
+        leftWrong = findViewById(R.id.left_wrong_btn);
+        rightWrong = findViewById(R.id.right_wrong_btn);
+        leftWrong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                leftWrongScore++;
+                displayLeftWrongs(leftWrongScore);
+                rightMatchScore++;
+                displayForRight(rightMatchScore);
+            }
+        });
+        rightWrong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rightWrongScore++;
+                displayRightWrongs(rightWrongScore);
+                leftMatchScore++;
+                displayForLeft(leftMatchScore);
+            }
+        });
         // Left side increment button
         incLeft.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -357,6 +377,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     // @Override the onCreateOptionsMenu method to inflate the tool_bar_menu.xml resource for the toolbar menu THEN
     // Return super true.
     @Override
@@ -364,6 +385,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.tool_bar_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
     // Overriding the onOptionsItemSelected for the tool bar menu,
     // create a switch cases to the onOptionsItemSelected boolean value,
     // Case for the NEW GAME Button
@@ -441,6 +463,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
     // Overriding the onBackPressed method to show a "Close App" AlertDialog with Yes & No buttons.
     @Override
     public void onBackPressed() {
@@ -474,15 +497,27 @@ public class MainActivity extends AppCompatActivity {
         closeAppDialog.show();
     }
 
-    // This method to display the left match score and take the current left score int @params.
+    // This method to display the left match score and take the current left score int as @params.
     public void displayForLeft(int currentLeftScore) {
         TextView scoreView = findViewById(R.id.left_score_tv);
         scoreView.setText(String.valueOf(currentLeftScore));
     }
 
-    // This method to display the right match score and take the current right score int @params.
+    // This method to display the right match score and take the current right score int as @params.
     public void displayForRight(int currentRightScore) {
         TextView scoreView = findViewById(R.id.right_score_tv);
         scoreView.setText(String.valueOf(currentRightScore));
+    }
+
+    // This method to display the left wrong score and take the current left wrong score int as @params.
+    public void displayLeftWrongs(int LeftWrongScore) {
+        TextView scoreView = findViewById(R.id.left_wrong_tv);
+        scoreView.setText(String.valueOf(LeftWrongScore));
+    }
+
+    // This method to display the left wrong score and take the current left wrong score int as @params.
+    public void displayRightWrongs(int RightWrongScore) {
+        TextView scoreView = findViewById(R.id.right_wrong_tv);
+        scoreView.setText(String.valueOf(RightWrongScore));
     }
 }

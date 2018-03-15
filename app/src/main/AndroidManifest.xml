@@ -12,11 +12,6 @@
         <activity android:name=".MainActivity">
 
         </activity>
-        <activity
-            android:name=".Standings"
-            android:theme="@style/Theme.Transparent">
-
-        </activity>
         <activity android:name=".UserNamesInput">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

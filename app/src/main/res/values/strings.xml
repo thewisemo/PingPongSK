@@ -43,5 +43,6 @@
     <string name="By_choosing_YES">By choosing YES! you will loose all current scores and will choose enter new players</string>
     <string name="So_enter">So, Enter the 2 sides Names</string>
     <string name="one_or_more">One OR Both Names Are Empty!</string>
+    <string name="wrong">wrong</string>
 
 </resources>
