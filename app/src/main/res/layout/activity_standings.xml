@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.pingpongsk.Standings">
+
+    <LinearLayout
+        android:id="@+id/standings_parent_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/round_bkg_dark"
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:paddingBottom="30dp"
+        android:paddingTop="10dp">
+        <!-- Standings head -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:text="@string/standings"
+            android:textColor="@color/White"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+        <!-- Start Horizontal names -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <!-- Left Name -->
+            <TextView
+                android:id="@+id/standings_left_name_tv"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/round_white_bkg"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="@string/left_team"
+                android:textAllCaps="true"
+                android:textColor="@color/Red"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <!-- Right Name -->
+            <TextView
+                android:id="@+id/standings_right_name_tv"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
+                android:background="@drawable/round_white_bkg"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="@string/right_team"
+                android:textAllCaps="true"
+                android:textColor="@color/Red"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <!-- End Horizontal names -->
+        </LinearLayout>
+        <!-- Recent 3 Matches Scores -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkBlue"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/sets_won"
+            android:textAllCaps="true"
+            android:textColor="@color/White"
+            android:textStyle="bold" />
+        <!-- Start Horizontal names -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/round_red_bkg"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <!-- Left Name -->
+            <TextView
+                android:id="@+id/standings_left_sets_won_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="60dp"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/round_red_bkg"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="@string/_0"
+                android:textAllCaps="true"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <!-- Right Name -->
+            <TextView
+                android:id="@+id/standings_right_sets_won_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="60dp"
+                android:layout_marginStart="60dp"
+                android:background="@drawable/round_red_bkg"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="@string/_0"
+                android:textAllCaps="true"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <!-- End Horizontal names -->
+        </LinearLayout>
+        <!-- Sets Scores title TV-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkBlue"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:text="@string/set_scores"
+            android:textAllCaps="true"
+            android:textColor="@color/White"
+            android:textStyle="bold" />
+        <!-- Start the three sets views include -->
+        <include
+            android:id="@+id/set_one_view"
+            layout="@layout/set_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/White" />
+
+        <include
+            android:id="@+id/set_two_view"
+            layout="@layout/set_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/White" />
+
+        <include
+            android:id="@+id/set_three_view"
+            layout="@layout/set_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+        <!-- Start Share & Back buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <!-- Share results button -->
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/round_white_bkg"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/share_scores"
+                android:textColor="@color/Red"
+                android:textStyle="bold" />
+            <!-- Share results button -->
+            <Button
+                android:id="@+id/back_btn"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/round_red_bkg"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:text="@string/back"
+                android:textColor="@color/White"
+                android:textStyle="bold" />
+            <!-- End Share & Back buttons -->
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

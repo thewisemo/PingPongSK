@@ -244,6 +244,17 @@
         android:layout_centerInParent="true"
         android:background="@drawable/reset_layer_list"
         android:contentDescription="@string/reset" />
+    <!-- Standing Button -->
+    <ImageButton
+        android:id="@+id/standings_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/reset_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/standings_list"
+        android:contentDescription="@string/standings"
+        android:textStyle="bold" />
     <!-- Swap Button -->
     <ImageButton
         android:id="@+id/swap_btn"

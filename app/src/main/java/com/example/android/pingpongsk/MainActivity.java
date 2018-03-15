@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     Animation rightLToRightAnimationObj;
     ImageButton swap;
     ImageButton reset;
+    ImageButton standings;
     ImageButton incLeft;
     ImageButton decLeft;
     ImageButton incRight;
@@ -376,7 +377,15 @@ public class MainActivity extends AppCompatActivity {
                 displayForRight(rightMatchScore);
             }
         });
+//        standings.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent standings = new Intent(MainActivity.this, Standings.class);
+//                startActivity(standings);
+//            }
+//        });
     }
+
 
     // @Override the onCreateOptionsMenu method to inflate the tool_bar_menu.xml resource for the toolbar menu THEN
     // Return super true.
