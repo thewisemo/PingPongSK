@@ -4,6 +4,10 @@ import android.widget.TextView;
 
 /**
  * Created by wisemo on 3/15/2018.
+ * This class is to control "By its public methods" the both player/s side scores TextViews,
+ * The ScoreTv constructor "object" is created by adding 2 TextView arrays of 9 indexes as @Params,
+ * ScoreTv class have 2 public methods To add an element inside each side array index aadToLeftArray & addToRightArray,
+ * Also ScoreTv class have 2 getters & setters for each TextView array instance.
  */
 
 public class ScoreTv {

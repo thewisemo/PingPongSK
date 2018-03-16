@@ -67,6 +67,16 @@ public class MainActivity extends AppCompatActivity {
     Activity mActivity;
     RelativeLayout mainParent;
 
+    // This @Override saves selected int values for screen rotation & passing to Standings class.
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save the players/teams current scores state
+        savedInstanceState.putInt("LeftMatchScore", leftMatchScore);
+        savedInstanceState.putInt("RightMatchScore", rightMatchScore);
+        // This super to always be called , so it can save the view hierarchy state "changed values"
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -504,6 +514,17 @@ public class MainActivity extends AppCompatActivity {
                         });
         // Showing Alert Dialog.
         closeAppDialog.show();
+    }
+
+    // This method to call saved data in onSaveInstanceState.
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can restore the view hierarchy "needed values"
+        super.onRestoreInstanceState(savedInstanceState);
+        // get player/s scores saved in onSavedInstanceState keys
+        leftMatchScore = savedInstanceState.getInt("LeftMatchScore");
+        rightMatchScore = savedInstanceState.getInt("RightMatchScore");
+        displayForLeft(savedInstanceState.getInt("LeftMatchScore"));
+        displayForRight(savedInstanceState.getInt("RightMatchScore"));
     }
 
     // This method to display the left match score and take the current left score int as @params.

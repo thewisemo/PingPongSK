@@ -155,39 +155,46 @@
             android:textAllCaps="true"
             android:textColor="@color/White"
             android:textStyle="bold" />
-        <!-- Start the three sets views include -->
-        <include
-            android:id="@+id/set_one_view"
-            layout="@layout/set_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
 
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/White" />
-
-        <include
-            android:id="@+id/set_two_view"
-            layout="@layout/set_two"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
+            android:gravity="center"
+            android:orientation="vertical">
+            <!-- Start the three sets views include -->
+            <include
+                android:id="@+id/set_one_view"
+                layout="@layout/set_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/White" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/White" />
 
-        <include
-            android:id="@+id/set_three_view"
-            layout="@layout/set_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
+            <include
+                android:id="@+id/set_two_view"
+                layout="@layout/set_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/White" />
+
+            <include
+                android:id="@+id/set_three_view"
+                layout="@layout/set_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
         <!-- Start Share & Back buttons -->
         <LinearLayout
             android:layout_width="match_parent"
