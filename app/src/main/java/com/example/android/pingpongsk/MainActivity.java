@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
     Context mContext;
     Activity mActivity;
     RelativeLayout mainParent;
-
     // This @Override saves selected int values for screen rotation & passing to Standings class.
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -310,7 +309,6 @@ public class MainActivity extends AppCompatActivity {
                     // Showing Alert Dialog.
                     isLeftWonDialog.show();
                 }
-
                 leftMatchScore++;
                 displayForLeft(leftMatchScore);
             }

@@ -3,9 +3,7 @@
     <string name="app_name">Ping Pong SK</string>
     <string name="back">عوده</string>
     <string name="share_scores">شارك النتيجه</string>
-    <string name="third">الثالث</string>
-    <string name="second">الثاني</string>
-    <string name="first">الأول</string>
+    <string name="third">مج3</string>
     <string name="set_scores">نتائج المجموعات</string>
     <string name="standings">النتائج</string>
     <string name="sets_won">إجمالي المجموعات فازها كل لاعب</string>
@@ -34,4 +32,6 @@
     <string name="So_enter">إذن! فضلاً أدخل أسماء اللاعبين</string>
     <string name="one_or_more">فضلاً أدخل أسماء اللاعبين قبل الضغط على إبدأ</string>
     <string name="wrong">خطأ</string>
+    <string name="first">مج1</string>
+    <string name="second">مج2</string>
 </resources>

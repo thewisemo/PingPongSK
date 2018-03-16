@@ -3,9 +3,9 @@
     <string name="back">Back</string>
     <string name="share_scores">SHARE SCORES</string>
     <string name="_0" translatable="false">0</string>
-    <string name="third">Third</string>
-    <string name="second">Second</string>
-    <string name="first">First</string>
+    <string name="third">3rd</string>
+    <string name="second">2nd</string>
+    <string name="first">1st</string>
     <string name="set_scores">SET SCORES</string>
     <string name="standings">Standings</string>
     <string name="left_team">Left Name</string>
