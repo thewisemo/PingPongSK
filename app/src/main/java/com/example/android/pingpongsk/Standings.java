@@ -54,21 +54,35 @@ public class Standings extends AppCompatActivity {
         rightMatchesScoresTvs[6] = setThreeView.findViewById(R.id.right_third_set_first_match_tv);
         rightMatchesScoresTvs[7] = setThreeView.findViewById(R.id.right_third_set_second_match_tv);
         rightMatchesScoresTvs[8] = setThreeView.findViewById(R.id.right_third_set_third_match_tv);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            Integer leftScore = bundle.getInt("LeftMatchScore");
+            Integer rightScore = bundle.getInt("RightMatchScore");
+            displayScoresOnTvs(0, leftScore, rightScore);
+        }
     }
 
-    public TextView getLeftScoreTv(int index) {
-        return leftMatchesScoresTvs[index];
+    public void displayScoresOnTvs(int index, Integer leftScore, Integer rightScore) {
+        for (int i = 0; (leftScore == 21 || rightScore == 21); i++) {
+            leftMatchesScoresTvs[i].setText(String.valueOf(leftScore));
+            rightMatchesScoresTvs[i].setText(String.valueOf(rightScore));
+        }
     }
 
     public void setLeftScoreTv(int index, TextView leftScore) {
         leftMatchesScoresTvs[index] = leftScore;
     }
+    public void setRightScoreTv(int index, TextView leftScore) {
+        rightMatchesScoresTvs[index] = leftScore;
+    }
+
+
+    public TextView getLeftScoreTv(int index) {
+        return leftMatchesScoresTvs[index];
+    }
 
     public TextView getRightScoreTv(int index) {
         return rightMatchesScoresTvs[index];
-    }
-
-    public void setRightScoreTv(int index, TextView leftScore) {
-        rightMatchesScoresTvs[index] = leftScore;
     }
 }

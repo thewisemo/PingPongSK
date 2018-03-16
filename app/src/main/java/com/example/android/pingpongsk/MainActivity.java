@@ -30,9 +30,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     // Declaring the pre wining point and assign the value to 20.
-    public static int maxMatchScore = 20;
-    public TextView leftScoreTv;
-    public TextView rightScoreTv;
+    Integer maxMatchScore = 20;
+    int leftMatchScore;
+    int rightMatchScore;
+    TextView leftScoreTv;
+    TextView rightScoreTv;
     // Declaring some objects like TextViews, LinearLayout, Animation, ImageButton, Boolean.,.. etc.
     TextView leftName;
     TextView rightName;
@@ -54,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
     Button leftWrong;
     Button rightWrong;
     Boolean leftIsLeft = true;
-    int leftMatchScore;
-    int rightMatchScore;
     int leftWrongScore;
     int rightWrongScore;
     // For the reset & standings popup windows declaring the popup window objects,
@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the players/teams current scores state
-        savedInstanceState.putInt("LeftMatchScore", leftMatchScore);
-        savedInstanceState.putInt("RightMatchScore", rightMatchScore);
+        savedInstanceState.putInt("LeftMatchScoreOne", leftMatchScore);
+        savedInstanceState.putInt("RightMatchScoreOne", rightMatchScore);
         // This super to always be called , so it can save the view hierarchy state "changed values"
         super.onSaveInstanceState(savedInstanceState);
     }
@@ -390,6 +390,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent standings = new Intent(MainActivity.this, Standings.class);
+                standings.putExtra("LeftMatchScore", leftMatchScore);
+                standings.putExtra("RightMatchScore", rightMatchScore);
                 startActivity(standings);
             }
         });
@@ -520,10 +522,10 @@ public class MainActivity extends AppCompatActivity {
         // Always call the superclass so it can restore the view hierarchy "needed values"
         super.onRestoreInstanceState(savedInstanceState);
         // get player/s scores saved in onSavedInstanceState keys
-        leftMatchScore = savedInstanceState.getInt("LeftMatchScore");
-        rightMatchScore = savedInstanceState.getInt("RightMatchScore");
-        displayForLeft(savedInstanceState.getInt("LeftMatchScore"));
-        displayForRight(savedInstanceState.getInt("RightMatchScore"));
+        leftMatchScore = savedInstanceState.getInt("LeftMatchScoreOne");
+        rightMatchScore = savedInstanceState.getInt("RightMatchScoreOne");
+        displayForLeft(savedInstanceState.getInt("LeftMatchScoreOne"));
+        displayForRight(savedInstanceState.getInt("RightMatchScoreOne"));
     }
 
     // This method to display the left match score and take the current left score int as @params.
