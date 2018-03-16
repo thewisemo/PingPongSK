@@ -2,14 +2,14 @@ package com.example.android.pingpongsk;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Standings extends AppCompatActivity {
     // Declaring the include views FrameLayout objects "Which contains the 18 scores TextViews - 9 for each player/s side".
-    FrameLayout setOneView;
-    FrameLayout setTwoView;
-    FrameLayout setThreeView;
+    LinearLayout setOneView;
+    LinearLayout setTwoView;
+    LinearLayout setThreeView;
     // Declaring 2 TextView arrays "To be added to the ScoreTv constructor" -- SEE THE ScoreTv CLASS --
     TextView[] leftTvs;
     TextView[] rightTvs;

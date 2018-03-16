@@ -387,13 +387,14 @@ public class MainActivity extends AppCompatActivity {
                 displayForRight(rightMatchScore);
             }
         });
-//        standings.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent standings = new Intent(MainActivity.this, Standings.class);
-//                startActivity(standings);
-//            }
-//        });
+        standings = findViewById(R.id.standings_btn);
+        standings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent standings = new Intent(MainActivity.this, Standings.class);
+                startActivity(standings);
+            }
+        });
     }
 
 
