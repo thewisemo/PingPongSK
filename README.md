@@ -4,7 +4,7 @@ Simply the App gives its user to track a Ping Pong matches score,
 I tried to make it keep the score tracking for 3 bests, but I couldn't
 finish it before the deadline as I wanted.
 
-**Screenshots**
+![forgit](https://user-images.githubusercontent.com/33489751/44397438-a2a4cf00-a540-11e8-9ace-b62943707f7f.png)
 
 It was hard to make the swap button animation work right, So I just kept it work based on the project rubric which was:
 
